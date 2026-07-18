@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Register · Face Authentication System</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="app-header">
+    <div class="brand">
+      <span class="brand-icon">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2L4 5v6c0 5.25 3.4 9.74 8 11 4.6-1.26 8-5.75 8-11V5l-8-3z" fill="currentColor"/>
+          <path d="M9 10a3 3 0 106 0 3 3 0 00-6 0z" fill="#fff"/>
+          <path d="M7.5 16c1-1.8 2.7-2.5 4.5-2.5s3.5.7 4.5 2.5" stroke="#fff" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+        </svg>
+      </span>
+      <div class="brand-text">
+        <h1>Face Authentication System</h1>
+        <p>Secure. Reliable. Seamless.</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="panels panels-single">
+    <section class="panel">
+      <div class="panel-icon-wrap">
+        <div class="panel-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="9" cy="8" r="4" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M2 21c0-4 3-7 7-7" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M18 8v6M15 11h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+      <h2>Registration</h2>
+      <p class="panel-sub">Fill in your details and capture your face to register</p>
+
+      <div class="cam-frame" id="register-cam-frame">
+        <video id="register-video" autoplay playsinline muted></video>
+        <canvas id="register-canvas" class="hidden"></canvas>
+        <div class="corner corner-tl"></div>
+        <div class="corner corner-tr"></div>
+        <div class="corner corner-bl"></div>
+        <div class="corner corner-br"></div>
+        <div class="cam-placeholder" id="register-placeholder">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.5"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6" stroke="currentColor" stroke-width="1.5"/></svg>
+          <span>Starting camera…</span>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <span class="input-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.6"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6" stroke="currentColor" stroke-width="1.6"/></svg>
+        </span>
+        <input type="text" id="reg-username" placeholder="Username" maxlength="32" />
+      </div>
+      <div class="input-group">
+        <span class="input-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.6"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6" stroke="currentColor" stroke-width="1.6"/></svg>
+        </span>
+        <input type="text" id="reg-fullname" placeholder="Full Name" maxlength="64" />
+      </div>
+
+      <button id="register-btn" class="primary-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 8h3l2-3h6l2 3h3v11H4V8z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="13" r="3.2" stroke="currentColor" stroke-width="1.8"/></svg>
+        Capture &amp; Register
+      </button>
+
+      <div id="register-result" class="result-box hidden"></div>
+
+      <p class="switch-link">Already registered? <a href="login.html">Log in</a></p>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2L4 5v6c0 5.25 3.4 9.74 8 11 4.6-1.26 8-5.75 8-11V5l-8-3z" fill="currentColor"/></svg>
+    <span>Your privacy and security are our top priority.</span>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/register.js"></script>
+</body>
+</html>

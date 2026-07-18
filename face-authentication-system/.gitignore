@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+env/
+
+# Databases & storage
+backend/users.db
+vector_db/chroma_storage/
+registered_faces/*
+!registered_faces/.gitkeep
+
+# Env
+.env.local
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+
+# Logs
+*.log

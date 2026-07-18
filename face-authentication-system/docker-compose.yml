@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  face-auth-api:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    container_name: face-auth-system
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./vector_db/chroma_storage:/app/vector_db/chroma_storage
+      - ./registered_faces:/app/registered_faces
+      - ./backend/users.db:/app/backend/users.db
+      - ./frontend:/app/frontend
+    env_file:
+      - .env
+    restart: unless-stopped
